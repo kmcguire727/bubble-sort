@@ -1,4 +1,4 @@
-# Bubble Sort (Ruby)
+# Bubble Sort
 
 A Ruby implementation of bubble sort, written for The Odin Project > Basic Ruby Projects.
 
