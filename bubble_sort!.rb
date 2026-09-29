@@ -1,4 +1,4 @@
-def bubble_sort(array) 
+def bubble_sort!(array) 
   # Jobs to be done:
   # - Determine length of array
   # - Loop over the array in order
@@ -12,7 +12,6 @@ def bubble_sort(array)
     was_sorted = false
 
     array.each_with_index do |num, index|
-      
       if (index + 1) > (array.length - 1)
         break
       else
@@ -32,9 +31,23 @@ def bubble_sort(array)
 
   end
 
-  p array
+  return array
 
 end
 
-bubble_sort([4,3,78,2,0,2])
-# => [0,2,2,3,4,78]
+##### TESTING BEGINS HERE #####
+def check_output(input, expected)
+  array_to_verify = bubble_sort!(input.dup)
+  puts array_to_verify == expected ? "PASS #{input}" : "FAIL #{input} != #{array_to_verify}, expected #{expected}"
+end
+
+check_output([4,3,78,2,0,2], [0,2,2,3,4,78])
+check_output([], [])
+check_output([1], [1])
+check_output([2,1], [1,2])
+check_output([1,2,3], [1,2,3])
+check_output([3,2,1], [1,2,3])
+check_output([5,5,5], [5,5,5])
+check_output([-1,-5,3], [-5,-1,3])
+
+#### TESTING ENDS #####
